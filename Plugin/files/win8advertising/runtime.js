@@ -41,7 +41,7 @@ cr.plugins_.win8advertising = function(runtime) {
 	instanceProto.onCreate = function() {
 
 		this.isWindows8 = !!(typeof window["c2isWindows8"] !== "undefined" && window["c2isWindows8"]);
-		if (this.isWindows8) {
+		if (!this.isWindows8) {
 			cr.logexport("[Construct 2] Windows 8 Advertising plugin not supported on this platform - the object will not be created");
 			return;
 		}
