@@ -77,7 +77,7 @@ cr.plugins_.win8advertising = function(runtime) {
 				
 		//this.inputElem.disabled = (this.properties[4] === 0);
 				
-		if (isVisible) {
+		if (!isVisible) {
 			jQuery(this.elem).hide();
 			this.visible = false;
 		}

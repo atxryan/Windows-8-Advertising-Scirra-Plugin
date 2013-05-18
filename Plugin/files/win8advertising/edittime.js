@@ -88,10 +88,10 @@ ACESDone();
 // Property grid properties for this plugin
 var property_list = [
 	new cr.Property(ept_text,	"Application ID",		
-									"a679d69a-f905-4160-8947-91fe8f5a57f4",			
+									"d25517cb-12d4-4699-8bdc-52040c712cab",			
 									"Application ID from Microsoft pubCenter"),
 	new cr.Property(ept_text,	"Ad Unit ID",		
-									"129642",			
+									"10043107",			
 									"Ad Unit ID from Microsoft pubCenter"),
 	new cr.Property(ept_combo,	"Size",		
 									"250x250",		
