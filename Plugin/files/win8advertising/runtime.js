@@ -56,7 +56,7 @@ cr.plugins_.win8advertising = function(runtime) {
 		var isAutoRefreshEnabled = this.properties[6] === 0 ? false : true;
 
 
-			
+		//Sampe AdControl
 		//<div data-win-control="MicrosoftNSJS.Advertising.AdControl" 
 		//data-win-options="{adUnitId:'129642', applicationId:'a679d69a-f905-4160-8947-91fe8f5a57f4', isAutoRefreshEnabled:false}" 
 		//style="width: 250px; height: 250px; z-index: 1;"
@@ -67,7 +67,7 @@ cr.plugins_.win8advertising = function(runtime) {
 							
 		this.elem.id = elemId;
 		jQuery(this.elem).attr("data-win-control", "MicrosoftNSJS.Advertising.AdControl");
-		jQuery(this.elem).attr("data-win-options", "{applicationId:'" + applicationId + "', adUnitId:'" + adUnitId + "'}");
+		jQuery(this.elem).attr("data-win-options", "{applicationId:'" + applicationId + "', adUnitId:'" + adUnitId + "', isAutoRefreshEnabled:'"+ isAutoRefreshEnabled.toString() +"'}");
 		jQuery(this.elem).css("width", size[0] + "px");
 		jQuery(this.elem).css("height", size[1] + "px");
 		jQuery(this.elem).css("z-index", 1);
@@ -77,8 +77,7 @@ cr.plugins_.win8advertising = function(runtime) {
 				
 		//this.inputElem.disabled = (this.properties[4] === 0);
 				
-		if (isVisible)
-		{
+		if (isVisible) {
 			jQuery(this.elem).hide();
 			this.visible = false;
 		}
@@ -148,8 +147,7 @@ cr.plugins_.win8advertising = function(runtime) {
 		var bottom = this.layer.layerToCanvas(this.x + this.width, this.y + this.height, false);
 		
 		// Is entirely offscreen or invisible: hide
-		if (!this.visible || !this.layer.visible || right <= 0 || bottom <= 0 || left >= this.runtime.width || top >= this.runtime.height)
-		{
+		if (!this.visible || !this.layer.visible || right <= 0 || bottom <= 0 || left >= this.runtime.width || top >= this.runtime.height) {
 			jQuery(this.elem).hide();
 			return;
 		}

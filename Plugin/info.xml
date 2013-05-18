@@ -2,7 +2,6 @@
 <c2addon>
 	<!-- One of: plugin, behavior, effect -->
 	<type>plugin</type>
-	
 	<name>Windows 8 Advertising</name>	
 	<version>1.0</version>
 	<author>Ryan Joy</author>

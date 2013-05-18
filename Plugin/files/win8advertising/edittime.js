@@ -5,8 +5,8 @@ function GetPluginSettings() {
 		"version":		"1.0",
 		"description":	"Advertising",
 		"author":		"Ryan Joy",
-		"help url":		"http://www.scirra.com/manual/111/button",
-		"category":		"Advertising",
+		"help url":		"http://ryanjoy.com/2013/05/introducing-a-windows-store-advertising-plugin-for-scirra-construct-2/",
+		"category":		"Platform specific",
 		"type":			"world",			// appears in layout
 		"rotatable":	false,
 		"flags":		pf_position_aces | pf_size_aces | pf_nosize
