@@ -3,7 +3,7 @@
 	<!-- One of: plugin, behavior, effect -->
 	<type>plugin</type>
 	<name>Windows 8 Advertising</name>	
-	<version>1.0</version>
+	<version>1.1</version>
 	<author>Ryan Joy</author>
 	<website>http://ryanjoy.com</website>
 	<documentation>http://ryanjoy.com/2013/05/introducing-a-windows-store-advertising-plugin-for-scirra-construct-2/</documentation>

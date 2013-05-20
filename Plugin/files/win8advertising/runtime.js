@@ -54,28 +54,29 @@ cr.plugins_.win8advertising = function(runtime) {
 		var isVisible = this.properties[4] === 0 ? false : true;
 		var isEnabled = this.properties[5] === 0 ? false : true;
 		var isAutoRefreshEnabled = this.properties[6] === 0 ? false : true;
+		var adControl;
 
 
-		//Sampe AdControl
-		//<div data-win-control="MicrosoftNSJS.Advertising.AdControl" 
-		//data-win-options="{adUnitId:'129642', applicationId:'a679d69a-f905-4160-8947-91fe8f5a57f4', isAutoRefreshEnabled:false}" 
-		//style="width: 250px; height: 250px; z-index: 1;"
-        //>
-		//</div>
+		/*Sampe AdControl
+		  <div data-win-control="MicrosoftNSJS.Advertising.AdControl" 
+		    data-win-options="{adUnitId:'129642', applicationId:'a679d69a-f905-4160-8947-91fe8f5a57f4', isAutoRefreshEnabled:false}" 
+		    style="width: 250px; height: 250px; z-index: 1;">
+		  </div>
+		*/
 
-		this.elem = document.createElement("div");
-							
+		// Create the element and append to the document
+		this.elem = document.createElement("div");							
 		this.elem.id = elemId;
 		jQuery(this.elem).attr("data-win-control", "MicrosoftNSJS.Advertising.AdControl");
-		jQuery(this.elem).attr("data-win-options", "{applicationId:'" + applicationId + "', adUnitId:'" + adUnitId + "', isAutoRefreshEnabled:'"+ isAutoRefreshEnabled.toString() +"'}");
 		jQuery(this.elem).css("width", size[0] + "px");
 		jQuery(this.elem).css("height", size[1] + "px");
 		jQuery(this.elem).css("z-index", 1);
-		//jQuery(this.elem).css("background-color", "red");
-
 		jQuery(this.elem).appendTo(this.runtime.canvasdiv ? this.runtime.canvasdiv : "body");
-				
-		//this.inputElem.disabled = (this.properties[4] === 0);
+		
+		// Instantiate the AdControl
+		// See: http://msdn.microsoft.com/en-us/library/advertising-windows-examples-javascript(v=msads.10).aspx
+		adControl = new MicrosoftNSJS.Advertising.AdControl(this.elem, { applicationId: applicationId, adUnitId: adUnitId});
+		adControl.isAutoRefreshEnabled = isAutoRefreshEnabled;
 				
 		if (!isVisible) {
 			jQuery(this.elem).hide();
@@ -123,6 +124,13 @@ cr.plugins_.win8advertising = function(runtime) {
 		this.updatePosition();
 		
 		this.runtime.tickMe(this);
+
+		// Kick off another processAll() method to ensure the 
+		// AdControl is constructed.
+		WinJS.UI.processAll().done(function () {
+			// Do nothing for now. 
+        	//var control = this.elem.winControl; 
+    	});
 	};
 	
 	instanceProto.onDestroy = function () {
