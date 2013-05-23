@@ -1,4 +1,4 @@
-# Windows 8 Advertising Scirra Construct 2 Plugin #
+# Windows 8 Advertising plugin for Construct 2 #
 This Construct 2 addon makes it easy to add Microsoft Advertising to your Windows Store app and easily interact with it from within your game. You can easily position it, hide it, enable/disable, and more!
 
 
